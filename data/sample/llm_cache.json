@@ -1,0 +1,1866 @@
+{
+  "0c587776e311d73fccdcb1837ed419fcd97b6b69b6dc5dd872d72d88ff8b9a3e": {
+    "extraction": {
+      "doc_id": "P01",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": {
+            "end": 74,
+            "start": 59,
+            "text": "right to delete"
+          },
+          "value": true
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": {
+            "end": 26,
+            "start": 15,
+            "text": "neural data"
+          },
+          "value": true
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": {
+            "end": 105,
+            "start": 98,
+            "text": "consent"
+          },
+          "value": true
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": {
+            "end": 150,
+            "start": 120,
+            "text": "only for the specified purpose"
+          },
+          "value": true
+        }
+      },
+      "findings": [
+        "Neural data is named and a deletion right is stated."
+      ],
+      "prompt_hash": "0c587776e311d73fccdcb1837ed419fcd97b6b69b6dc5dd872d72d88ff8b9a3e",
+      "status": "COMPLIANT"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "0c587776e311d73fccdcb1837ed419fcd97b6b69b6dc5dd872d72d88ff8b9a3e",
+    "schema_version": "phase0-v1"
+  },
+  "1e3798ac20c3adc78f2ace72bbfcaf0e3878cc7eb0303ffb15b338231bd2cbce": {
+    "extraction": {
+      "doc_id": "vendor-c.html",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": {
+            "end": 236,
+            "start": 221,
+            "text": "right to delete"
+          },
+          "value": true
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": {
+            "end": 181,
+            "start": 170,
+            "text": "neural data"
+          },
+          "value": true
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": {
+            "end": 346,
+            "start": 333,
+            "text": "cannot delete"
+          },
+          "value": true
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": null,
+          "value": false
+        }
+      },
+      "findings": [
+        "Deletion clause is contradicted by a retention clause."
+      ],
+      "prompt_hash": "1e3798ac20c3adc78f2ace72bbfcaf0e3878cc7eb0303ffb15b338231bd2cbce",
+      "status": "INDETERMINATE"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "1e3798ac20c3adc78f2ace72bbfcaf0e3878cc7eb0303ffb15b338231bd2cbce",
+    "schema_version": "phase0-v1"
+  },
+  "32053521711a762fd6bedfb45d57e6d8ec61340e1ebe364cc56d4fcb0c3eebf3": {
+    "extraction": {
+      "doc_id": "vendor-d-2025-06.html",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": {
+            "end": 250,
+            "start": 235,
+            "text": "right to delete"
+          },
+          "value": true
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": {
+            "end": 194,
+            "start": 183,
+            "text": "neural data"
+          },
+          "value": true
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": {
+            "end": 281,
+            "start": 274,
+            "text": "consent"
+          },
+          "value": true
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": null,
+          "value": false
+        }
+      },
+      "findings": [
+        "Neural data is named and a deletion right is stated."
+      ],
+      "prompt_hash": "32053521711a762fd6bedfb45d57e6d8ec61340e1ebe364cc56d4fcb0c3eebf3",
+      "status": "COMPLIANT"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "32053521711a762fd6bedfb45d57e6d8ec61340e1ebe364cc56d4fcb0c3eebf3",
+    "schema_version": "phase0-v1"
+  },
+  "3f997be6171ebde525b5a5f980a3ddf2df53f5669c9b8732f4d776ff04b277ea": {
+    "extraction": {
+      "doc_id": "vendor-a.html",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": {
+            "end": 519,
+            "start": 515,
+            "text": "sell"
+          },
+          "value": true
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": {
+            "end": 269,
+            "start": 254,
+            "text": "right to delete"
+          },
+          "value": true
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": {
+            "end": 181,
+            "start": 170,
+            "text": "neural data"
+          },
+          "value": true
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": {
+            "end": 342,
+            "start": 335,
+            "text": "consent"
+          },
+          "value": true
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": {
+            "end": 434,
+            "start": 404,
+            "text": "only for the specified purpose"
+          },
+          "value": true
+        }
+      },
+      "findings": [
+        "Neural data is named and a deletion right is stated."
+      ],
+      "prompt_hash": "3f997be6171ebde525b5a5f980a3ddf2df53f5669c9b8732f4d776ff04b277ea",
+      "status": "COMPLIANT"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "3f997be6171ebde525b5a5f980a3ddf2df53f5669c9b8732f4d776ff04b277ea",
+    "schema_version": "phase0-v1"
+  },
+  "428ec0f9e4c59a5c09a554c160049e442b9341e5424f863484454989570601fc": {
+    "extraction": {
+      "doc_id": "P19",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": {
+            "end": 80,
+            "start": 65,
+            "text": "right to delete"
+          },
+          "value": true
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": {
+            "end": 32,
+            "start": 29,
+            "text": "MEG"
+          },
+          "value": true
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": null,
+          "value": false
+        }
+      },
+      "findings": [
+        "Neural data is named and a deletion right is stated."
+      ],
+      "prompt_hash": "428ec0f9e4c59a5c09a554c160049e442b9341e5424f863484454989570601fc",
+      "status": "COMPLIANT"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "428ec0f9e4c59a5c09a554c160049e442b9341e5424f863484454989570601fc",
+    "schema_version": "phase0-v1"
+  },
+  "45a7184a6c0cd0ae857ca5188132efc6b33389788fa0ec1fc7a0b1a46ce58fc5": {
+    "extraction": {
+      "doc_id": "P06",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": {
+            "end": 71,
+            "start": 56,
+            "text": "right to delete"
+          },
+          "value": true
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": {
+            "end": 28,
+            "start": 25,
+            "text": "EEG"
+          },
+          "value": true
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": null,
+          "value": false
+        }
+      },
+      "findings": [
+        "Neural data is named and a deletion right is stated."
+      ],
+      "prompt_hash": "45a7184a6c0cd0ae857ca5188132efc6b33389788fa0ec1fc7a0b1a46ce58fc5",
+      "status": "COMPLIANT"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "45a7184a6c0cd0ae857ca5188132efc6b33389788fa0ec1fc7a0b1a46ce58fc5",
+    "schema_version": "phase0-v1"
+  },
+  "4734484c09027e0051355ef8c02e35ba8593b20ced31dc237c17e04e0514ceee": {
+    "extraction": {
+      "doc_id": "P20",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": {
+            "end": 16,
+            "start": 4,
+            "text": "Headset data"
+          },
+          "value": true
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": {
+            "end": 50,
+            "start": 33,
+            "text": "service providers"
+          },
+          "value": true
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": {
+            "end": 86,
+            "start": 65,
+            "text": "right to be forgotten"
+          },
+          "value": true
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": null,
+          "value": false
+        }
+      },
+      "findings": [
+        "Coverage is only under a generic device-data category."
+      ],
+      "prompt_hash": "4734484c09027e0051355ef8c02e35ba8593b20ced31dc237c17e04e0514ceee",
+      "status": "COMPLIANT"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "4734484c09027e0051355ef8c02e35ba8593b20ced31dc237c17e04e0514ceee",
+    "schema_version": "phase0-v1"
+  },
+  "50026ea9d72d6bdfbade1282656250e68a26d50e624d480eb9fbdf9a0d41a288": {
+    "extraction": {
+      "doc_id": "P04",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": {
+            "end": 30,
+            "start": 26,
+            "text": "sold"
+          },
+          "value": true
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": {
+            "end": 18,
+            "start": 4,
+            "text": "Neural signals"
+          },
+          "value": true
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": null,
+          "value": false
+        }
+      },
+      "findings": [
+        "No deletion right located in the policy text."
+      ],
+      "prompt_hash": "50026ea9d72d6bdfbade1282656250e68a26d50e624d480eb9fbdf9a0d41a288",
+      "status": "GAP"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "50026ea9d72d6bdfbade1282656250e68a26d50e624d480eb9fbdf9a0d41a288",
+    "schema_version": "phase0-v1"
+  },
+  "52e9a9747c19abe3099284a5de155364383a4db7a7495f89d16cbecb0a6e1c47": {
+    "extraction": {
+      "doc_id": "P07",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": {
+            "end": 54,
+            "start": 41,
+            "text": "third parties"
+          },
+          "value": true
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": {
+            "end": 84,
+            "start": 69,
+            "text": "right to delete"
+          },
+          "value": true
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": {
+            "end": 11,
+            "start": 8,
+            "text": "BCI"
+          },
+          "value": true
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": null,
+          "value": false
+        }
+      },
+      "findings": [
+        "Neural data is named and a deletion right is stated."
+      ],
+      "prompt_hash": "52e9a9747c19abe3099284a5de155364383a4db7a7495f89d16cbecb0a6e1c47",
+      "status": "COMPLIANT"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "52e9a9747c19abe3099284a5de155364383a4db7a7495f89d16cbecb0a6e1c47",
+    "schema_version": "phase0-v1"
+  },
+  "6a889dc50729ea654ecfae047ba0e5d1cdfff694ca26c7a31c4eeb5ad5e4787f": {
+    "extraction": {
+      "doc_id": "P08",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": {
+            "end": 24,
+            "start": 13,
+            "text": "sensor data"
+          },
+          "value": true
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": {
+            "end": 59,
+            "start": 49,
+            "text": "erase your"
+          },
+          "value": true
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": null,
+          "value": false
+        }
+      },
+      "findings": [
+        "Coverage is only under a generic device-data category."
+      ],
+      "prompt_hash": "6a889dc50729ea654ecfae047ba0e5d1cdfff694ca26c7a31c4eeb5ad5e4787f",
+      "status": "COMPLIANT"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "6a889dc50729ea654ecfae047ba0e5d1cdfff694ca26c7a31c4eeb5ad5e4787f",
+    "schema_version": "phase0-v1"
+  },
+  "750d9c34969a634abe634b10b7c8d31f96999a4ea598af7efd96df190c67ac6c": {
+    "extraction": {
+      "doc_id": "P02",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": {
+            "end": 34,
+            "start": 23,
+            "text": "device data"
+          },
+          "value": true
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": {
+            "end": 77,
+            "start": 62,
+            "text": "right to delete"
+          },
+          "value": true
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": null,
+          "value": false
+        }
+      },
+      "findings": [
+        "Coverage is only under a generic device-data category."
+      ],
+      "prompt_hash": "750d9c34969a634abe634b10b7c8d31f96999a4ea598af7efd96df190c67ac6c",
+      "status": "COMPLIANT"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "750d9c34969a634abe634b10b7c8d31f96999a4ea598af7efd96df190c67ac6c",
+    "schema_version": "phase0-v1"
+  },
+  "85e01cfa10b977f73e83951bc6899cc4b4ed54795d8161a50ca8bd4d368c35fa": {
+    "extraction": {
+      "doc_id": "P11",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": {
+            "end": 118,
+            "start": 103,
+            "text": "right to delete"
+          },
+          "value": true
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": {
+            "end": 15,
+            "start": 4,
+            "text": "Neural data"
+          },
+          "value": true
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": {
+            "end": 49,
+            "start": 42,
+            "text": "consent"
+          },
+          "value": true
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": {
+            "end": 88,
+            "start": 57,
+            "text": "not used for unrelated purposes"
+          },
+          "value": true
+        }
+      },
+      "findings": [
+        "Neural data is named and a deletion right is stated."
+      ],
+      "prompt_hash": "85e01cfa10b977f73e83951bc6899cc4b4ed54795d8161a50ca8bd4d368c35fa",
+      "status": "COMPLIANT"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "85e01cfa10b977f73e83951bc6899cc4b4ed54795d8161a50ca8bd4d368c35fa",
+    "schema_version": "phase0-v1"
+  },
+  "8b22636a5a6f4738559e3d2edafbbd431c90ac53df0132dada8022de9d4ef266": {
+    "extraction": {
+      "doc_id": "P13",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": {
+            "end": 28,
+            "start": 12,
+            "text": "request deletion"
+          },
+          "value": true
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": {
+            "end": 43,
+            "start": 32,
+            "text": "neural data"
+          },
+          "value": true
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": {
+            "end": 63,
+            "start": 48,
+            "text": "will not delete"
+          },
+          "value": true
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": null,
+          "value": false
+        }
+      },
+      "findings": [
+        "Deletion clause is contradicted by a retention clause."
+      ],
+      "prompt_hash": "8b22636a5a6f4738559e3d2edafbbd431c90ac53df0132dada8022de9d4ef266",
+      "status": "INDETERMINATE"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "8b22636a5a6f4738559e3d2edafbbd431c90ac53df0132dada8022de9d4ef266",
+    "schema_version": "phase0-v1"
+  },
+  "9c180bc2ae9ca4493f983e56380cbe32ad21db314bc8dc4e9bf4ec37b9a9f114": {
+    "extraction": {
+      "doc_id": "P09",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": null,
+          "value": false
+        }
+      },
+      "findings": [
+        "Policy does not name neural data or a covering device-data category."
+      ],
+      "prompt_hash": "9c180bc2ae9ca4493f983e56380cbe32ad21db314bc8dc4e9bf4ec37b9a9f114",
+      "status": "GAP"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "9c180bc2ae9ca4493f983e56380cbe32ad21db314bc8dc4e9bf4ec37b9a9f114",
+    "schema_version": "phase0-v1"
+  },
+  "9d940cfdd08cb358a6a648f8e85e238055666bfdc83c724601011bfdeafc5438": {
+    "extraction": {
+      "doc_id": "P14",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": {
+            "end": 22,
+            "start": 4,
+            "text": "Physiological data"
+          },
+          "value": true
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": {
+            "end": 72,
+            "start": 62,
+            "text": "erase your"
+          },
+          "value": true
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": null,
+          "value": false
+        }
+      },
+      "findings": [
+        "Coverage is only under a generic device-data category."
+      ],
+      "prompt_hash": "9d940cfdd08cb358a6a648f8e85e238055666bfdc83c724601011bfdeafc5438",
+      "status": "COMPLIANT"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "9d940cfdd08cb358a6a648f8e85e238055666bfdc83c724601011bfdeafc5438",
+    "schema_version": "phase0-v1"
+  },
+  "a283c7aa28ef5ded286a9d54bdb703b97dabdf4e4a81ac930b46f3c73ddb3d6b": {
+    "extraction": {
+      "doc_id": "P16",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": {
+            "end": 116,
+            "start": 112,
+            "text": "sell"
+          },
+          "value": true
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": {
+            "end": 96,
+            "start": 81,
+            "text": "right to delete"
+          },
+          "value": true
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": {
+            "end": 66,
+            "start": 55,
+            "text": "neural data"
+          },
+          "value": true
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": {
+            "end": 139,
+            "start": 132,
+            "text": "consent"
+          },
+          "value": true
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": {
+            "end": 168,
+            "start": 150,
+            "text": "purpose limitation"
+          },
+          "value": true
+        }
+      },
+      "findings": [
+        "Neural data is named and a deletion right is stated."
+      ],
+      "prompt_hash": "a283c7aa28ef5ded286a9d54bdb703b97dabdf4e4a81ac930b46f3c73ddb3d6b",
+      "status": "COMPLIANT"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "a283c7aa28ef5ded286a9d54bdb703b97dabdf4e4a81ac930b46f3c73ddb3d6b",
+    "schema_version": "phase0-v1"
+  },
+  "a64fc3126e86feec451f5d155cf011affabbcbec26d0148115858b8c0bc62613": {
+    "extraction": {
+      "doc_id": "vendor-d-2025-01.html",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": {
+            "end": 306,
+            "start": 293,
+            "text": "third parties"
+          },
+          "value": true
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": {
+            "end": 253,
+            "start": 238,
+            "text": "right to delete"
+          },
+          "value": true
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": {
+            "end": 197,
+            "start": 186,
+            "text": "neural data"
+          },
+          "value": true
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": {
+            "end": 353,
+            "start": 346,
+            "text": "consent"
+          },
+          "value": true
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": null,
+          "value": false
+        }
+      },
+      "findings": [
+        "Neural data is named and a deletion right is stated."
+      ],
+      "prompt_hash": "a64fc3126e86feec451f5d155cf011affabbcbec26d0148115858b8c0bc62613",
+      "status": "COMPLIANT"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "a64fc3126e86feec451f5d155cf011affabbcbec26d0148115858b8c0bc62613",
+    "schema_version": "phase0-v1"
+  },
+  "c07ac3ff0e9bf2d771fe11c1549e11d2389993e9b9605c07a9ff8ff8cd40a74f": {
+    "extraction": {
+      "doc_id": "P17",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": {
+            "end": 128,
+            "start": 113,
+            "text": "right to delete"
+          },
+          "value": true
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": {
+            "end": 42,
+            "start": 31,
+            "text": "neural data"
+          },
+          "value": true
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": {
+            "end": 80,
+            "start": 73,
+            "text": "consent"
+          },
+          "value": true
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": null,
+          "value": false
+        }
+      },
+      "findings": [
+        "Neural data is named and a deletion right is stated."
+      ],
+      "prompt_hash": "c07ac3ff0e9bf2d771fe11c1549e11d2389993e9b9605c07a9ff8ff8cd40a74f",
+      "status": "COMPLIANT"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "c07ac3ff0e9bf2d771fe11c1549e11d2389993e9b9605c07a9ff8ff8cd40a74f",
+    "schema_version": "phase0-v1"
+  },
+  "c1991764288ca41333a9a092732cc096bc3c7bacc41364b30f52980175594c92": {
+    "extraction": {
+      "doc_id": "P10",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": {
+            "end": 51,
+            "start": 47,
+            "text": "sold"
+          },
+          "value": true
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": {
+            "end": 79,
+            "start": 68,
+            "text": "advertisers"
+          },
+          "value": true
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": {
+            "end": 29,
+            "start": 15,
+            "text": "brain activity"
+          },
+          "value": true
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": null,
+          "value": false
+        }
+      },
+      "findings": [
+        "No deletion right located in the policy text."
+      ],
+      "prompt_hash": "c1991764288ca41333a9a092732cc096bc3c7bacc41364b30f52980175594c92",
+      "status": "GAP"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "c1991764288ca41333a9a092732cc096bc3c7bacc41364b30f52980175594c92",
+    "schema_version": "phase0-v1"
+  },
+  "c32c937ccc311b18d0674dda3a915537d47624e45ded3fe22cdf9c1c6f0367b8": {
+    "extraction": {
+      "doc_id": "P05",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": {
+            "end": 26,
+            "start": 15,
+            "text": "neural data"
+          },
+          "value": true
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": null,
+          "value": false
+        }
+      },
+      "findings": [
+        "No deletion right located in the policy text."
+      ],
+      "prompt_hash": "c32c937ccc311b18d0674dda3a915537d47624e45ded3fe22cdf9c1c6f0367b8",
+      "status": "GAP"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "c32c937ccc311b18d0674dda3a915537d47624e45ded3fe22cdf9c1c6f0367b8",
+    "schema_version": "phase0-v1"
+  },
+  "cfebf6691a0c0509140d7411d5b7aae9a36f47db72292d166d8d62053f0badfd": {
+    "extraction": {
+      "doc_id": "P03",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": {
+            "end": 56,
+            "start": 41,
+            "text": "right to delete"
+          },
+          "value": true
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": {
+            "end": 26,
+            "start": 15,
+            "text": "neural data"
+          },
+          "value": true
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": {
+            "end": 125,
+            "start": 112,
+            "text": "cannot delete"
+          },
+          "value": true
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": null,
+          "value": false
+        }
+      },
+      "findings": [
+        "Deletion clause is contradicted by a retention clause."
+      ],
+      "prompt_hash": "cfebf6691a0c0509140d7411d5b7aae9a36f47db72292d166d8d62053f0badfd",
+      "status": "INDETERMINATE"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "cfebf6691a0c0509140d7411d5b7aae9a36f47db72292d166d8d62053f0badfd",
+    "schema_version": "phase0-v1"
+  },
+  "ed8dd1020ad68f7fe1c7011b15b1652f6188b3f48459d95caff72a910f0b318c": {
+    "extraction": {
+      "doc_id": "P12",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": {
+            "end": 17,
+            "start": 4,
+            "text": "Wearable data"
+          },
+          "value": true
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": {
+            "end": 67,
+            "start": 52,
+            "text": "right to delete"
+          },
+          "value": true
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": null,
+          "value": false
+        }
+      },
+      "findings": [
+        "Coverage is only under a generic device-data category."
+      ],
+      "prompt_hash": "ed8dd1020ad68f7fe1c7011b15b1652f6188b3f48459d95caff72a910f0b318c",
+      "status": "COMPLIANT"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "ed8dd1020ad68f7fe1c7011b15b1652f6188b3f48459d95caff72a910f0b318c",
+    "schema_version": "phase0-v1"
+  },
+  "edf67123bee09f8be4be6b29ec396bfcdd552b93e432305897c63d77e8a15138": {
+    "extraction": {
+      "doc_id": "P15",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": {
+            "end": 11,
+            "start": 7,
+            "text": "sell"
+          },
+          "value": true
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": null,
+          "value": false
+        }
+      },
+      "findings": [
+        "Policy does not name neural data or a covering device-data category."
+      ],
+      "prompt_hash": "edf67123bee09f8be4be6b29ec396bfcdd552b93e432305897c63d77e8a15138",
+      "status": "GAP"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "edf67123bee09f8be4be6b29ec396bfcdd552b93e432305897c63d77e8a15138",
+    "schema_version": "phase0-v1"
+  },
+  "f178ab7ad6412ecde5d5b64ce1f2605a8ffcf731bf276f82f71927578694e5a6": {
+    "extraction": {
+      "doc_id": "P18",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": {
+            "end": 15,
+            "start": 11,
+            "text": "sell"
+          },
+          "value": true
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": null,
+          "value": false
+        }
+      },
+      "findings": [
+        "Policy does not name neural data or a covering device-data category."
+      ],
+      "prompt_hash": "f178ab7ad6412ecde5d5b64ce1f2605a8ffcf731bf276f82f71927578694e5a6",
+      "status": "GAP"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "f178ab7ad6412ecde5d5b64ce1f2605a8ffcf731bf276f82f71927578694e5a6",
+    "schema_version": "phase0-v1"
+  },
+  "fd4230998b912f5c736b135bb045264cecdf90251644256e40be29e6e0f1f453": {
+    "extraction": {
+      "doc_id": "vendor-b.html",
+      "extractor": "rules",
+      "fields": {
+        "covers_generic_device_data": {
+          "name": "covers_generic_device_data",
+          "source": "rules",
+          "span": {
+            "end": 191,
+            "start": 180,
+            "text": "device data"
+          },
+          "value": true
+        },
+        "discloses_sale": {
+          "name": "discloses_sale",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "discloses_sharing": {
+          "name": "discloses_sharing",
+          "source": "rules",
+          "span": {
+            "end": 364,
+            "start": 347,
+            "text": "service providers"
+          },
+          "value": true
+        },
+        "grants_deletion": {
+          "name": "grants_deletion",
+          "source": "rules",
+          "span": {
+            "end": 296,
+            "start": 281,
+            "text": "right to delete"
+          },
+          "value": true
+        },
+        "names_neural_data": {
+          "name": "names_neural_data",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "retention_conflicts_deletion": {
+          "name": "retention_conflicts_deletion",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_consent_for_sensitive": {
+          "name": "states_consent_for_sensitive",
+          "source": "rules",
+          "span": null,
+          "value": false
+        },
+        "states_purpose_limitation": {
+          "name": "states_purpose_limitation",
+          "source": "rules",
+          "span": null,
+          "value": false
+        }
+      },
+      "findings": [
+        "Coverage is only under a generic device-data category."
+      ],
+      "prompt_hash": "fd4230998b912f5c736b135bb045264cecdf90251644256e40be29e6e0f1f453",
+      "status": "COMPLIANT"
+    },
+    "model": "cached-phase0-no-live-api",
+    "prompt_hash": "fd4230998b912f5c736b135bb045264cecdf90251644256e40be29e6e0f1f453",
+    "schema_version": "phase0-v1"
+  }
+}

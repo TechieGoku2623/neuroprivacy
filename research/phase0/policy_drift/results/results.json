@@ -1,0 +1,51 @@
+{
+  "change_rate": 0.2909090909090909,
+  "decision": "Observed change rate 16/55 = 0.291. Recommended monitoring cadence: monthly.",
+  "distinct_hashes_by_vendor": {
+    "alpha": 12,
+    "beta": 4,
+    "delta": 2,
+    "epsilon": 1,
+    "gamma": 2
+  },
+  "n_changes": 16,
+  "n_snapshots": 60,
+  "n_transitions": 55,
+  "n_vendors": 5,
+  "recommended_cadence": "monthly",
+  "sample_d_jan_sha256": "5c29b41ad575b0b2c5684b81bbfae5356fa2d79f050f45897597e607e8f84e4b",
+  "sample_d_jun_sha256": "4c556d3a5e9161b7343dcf86c882d40c3ede14b17daab6d2b8a4f3972bb36e02",
+  "vendor_d_sharing_removed": true,
+  "vendor_stats": {
+    "alpha": {
+      "change_rate": 1.0,
+      "n_changes": 11,
+      "n_snapshots": 12,
+      "n_transitions": 11
+    },
+    "beta": {
+      "change_rate": 0.2727272727272727,
+      "n_changes": 3,
+      "n_snapshots": 12,
+      "n_transitions": 11
+    },
+    "delta": {
+      "change_rate": 0.09090909090909091,
+      "n_changes": 1,
+      "n_snapshots": 12,
+      "n_transitions": 11
+    },
+    "epsilon": {
+      "change_rate": 0.0,
+      "n_changes": 0,
+      "n_snapshots": 12,
+      "n_transitions": 11
+    },
+    "gamma": {
+      "change_rate": 0.09090909090909091,
+      "n_changes": 1,
+      "n_snapshots": 12,
+      "n_transitions": 11
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "decision": "LLM extraction is viable on this schema: mean field F1 (1.000) \u2265 0.80 and gold-vs-rater2 kappa (0.740) \u2265 0.60.",
+  "fields": {
+    "covers_generic_device_data": {
+      "f1": 1.0,
+      "gold_positive": 5,
+      "kappa_gold_vs_rater2": 0.27272727272727326,
+      "kappa_vs_keyword": 0.0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "discloses_sale": {
+      "f1": 1.0,
+      "gold_positive": 5,
+      "kappa_gold_vs_rater2": 0.6923076923076924,
+      "kappa_vs_keyword": 0.6923076923076924,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "discloses_sharing": {
+      "f1": 1.0,
+      "gold_positive": 3,
+      "kappa_gold_vs_rater2": 0.45945945945945976,
+      "kappa_vs_keyword": 0.45945945945945976,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "grants_deletion": {
+      "f1": 1.0,
+      "gold_positive": 14,
+      "kappa_gold_vs_rater2": 0.5652173913043479,
+      "kappa_vs_keyword": 0.5652173913043479,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "names_neural_data": {
+      "f1": 1.0,
+      "gold_positive": 12,
+      "kappa_gold_vs_rater2": 0.7058823529411763,
+      "kappa_vs_keyword": 0.8979591836734693,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "retention_conflicts_deletion": {
+      "f1": 1.0,
+      "gold_positive": 2,
+      "kappa_gold_vs_rater2": 1.0,
+      "kappa_vs_keyword": 0.6428571428571426,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "states_consent_for_sensitive": {
+      "f1": 1.0,
+      "gold_positive": 4,
+      "kappa_gold_vs_rater2": 1.0,
+      "kappa_vs_keyword": 1.0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "states_purpose_limitation": {
+      "f1": 1.0,
+      "gold_positive": 3,
+      "kappa_gold_vs_rater2": 0.7727272727272725,
+      "kappa_vs_keyword": 0.45945945945945976,
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  },
+  "kappa_extractor_vs_keyword": 0.7222222222222224,
+  "kappa_gold_vs_rater2": 0.7402597402597404,
+  "keyword_misses_generic": 5,
+  "mean_field_f1": 1.0,
+  "n_documents": 20,
+  "n_generic_gold": 5,
+  "status_accuracy": 1.0,
+  "viable": true
+}

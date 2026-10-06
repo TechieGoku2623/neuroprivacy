@@ -1,0 +1,406 @@
+{
+  "documents": [
+    {
+      "doc_id": "P01",
+      "html": "<h1>P01</h1><p>We collect neural data from the headband.</p><p>You have the right to delete neural data.</p><p>We obtain consent. Data is used only for the specified purpose.</p>",
+      "notes": "Explicit neural + deletion."
+    },
+    {
+      "doc_id": "P02",
+      "html": "<h1>P02</h1><p>The headset stores device data in the cloud.</p><p>You have the right to delete device data.</p>",
+      "notes": "Generic device data. Keyword baseline misses names and generic cover."
+    },
+    {
+      "doc_id": "P03",
+      "html": "<h1>P03</h1><p>We process neural data.</p><p>You have the right to delete your records.</p><p>We retain all recordings for 7 years and cannot delete archives.</p>",
+      "notes": "Deletion contradicted by retention."
+    },
+    {
+      "doc_id": "P04",
+      "html": "<h1>P04</h1><p>Neural signals may be sold to research partners.</p><p>No deletion mechanism is described.</p>",
+      "notes": "Sale disclosed, no deletion."
+    },
+    {
+      "doc_id": "P05",
+      "html": "<h1>P05</h1><p>We collect neural data for product analytics.</p>",
+      "notes": "Neural named, no deletion."
+    },
+    {
+      "doc_id": "P06",
+      "html": "<h1>P06</h1><p>The wearable records EEG during sleep.</p><p>You have the right to delete sleep sessions.</p>",
+      "notes": "EEG is an explicit neural-data synonym."
+    },
+    {
+      "doc_id": "P07",
+      "html": "<h1>P07</h1><p>Our BCI app shares session logs with third parties.</p><p>You have the right to delete session logs.</p>",
+      "notes": "BCI + sharing + deletion."
+    },
+    {
+      "doc_id": "P08",
+      "html": "<h1>P08</h1><p>We store sensor data from the visor.</p><p>You may erase your sensor data from the account page.</p>",
+      "notes": "Erase synonym. Keyword and rater2 miss erasure-only deletion."
+    },
+    {
+      "doc_id": "P09",
+      "html": "<h1>P09</h1><p>We care about privacy and your trust.</p>",
+      "notes": "Empty marketing policy."
+    },
+    {
+      "doc_id": "P10",
+      "html": "<h1>P10</h1><p>We measure brain activity and that data is sold and shared with advertisers.</p>",
+      "notes": "Brain activity + sale + advertisers."
+    },
+    {
+      "doc_id": "P11",
+      "html": "<h1>P11</h1><p>Neural data is processed after opt-in consent.</p><p>It is not used for unrelated purposes.</p><p>You have the right to delete this information.</p>",
+      "notes": "Consent + purpose + deletion."
+    },
+    {
+      "doc_id": "P12",
+      "html": "<h1>P12</h1><p>Wearable data is uploaded nightly.</p><p>You have the right to delete wearable data.</p>",
+      "notes": "Wearable data generic cover."
+    },
+    {
+      "doc_id": "P13",
+      "html": "<h1>P13</h1><p>You may request deletion of neural data.</p><p>We will not delete safety logs after a request.</p>",
+      "notes": "Request deletion vs will not delete."
+    },
+    {
+      "doc_id": "P14",
+      "html": "<h1>P14</h1><p>Physiological data is stored on the phone.</p><p>Use the app to erase your physiological data.</p>",
+      "notes": "Physiological data + erase. Rater2 misses both generic synonym and erase."
+    },
+    {
+      "doc_id": "P15",
+      "html": "<h1>P15</h1><p>We sell biometric templates derived from the camera.</p><p>This policy does not mention headset telemetry categories.</p>",
+      "notes": "Biometric sale is not neural data."
+    },
+    {
+      "doc_id": "P16",
+      "html": "<h1>P16</h1><p>Sensitive personal information we collect includes neural data.</p><p>You have the right to delete SPI. We do not sell SPI.</p><p>We obtain consent and apply purpose limitation.</p>",
+      "notes": "CCPA-style SPI list. 'do not sell' still discloses sale as a topic."
+    },
+    {
+      "doc_id": "P17",
+      "html": "<h1>P17</h1><p>Biological data, including neural data, is sensitive data.</p><p>We obtain consent before processing. You have the right to delete it.</p>",
+      "notes": "Colorado-style biological + neural."
+    },
+    {
+      "doc_id": "P18",
+      "html": "<h1>P18</h1><p>We may sell your data to grow the business.</p><p>Contact us with questions.</p>",
+      "notes": "Vague sale, no neural category."
+    },
+    {
+      "doc_id": "P19",
+      "html": "<h1>P19</h1><p>The research kit records MEG and fNIRS streams.</p><p>You have the right to delete research-kit recordings.</p>",
+      "notes": "MEG/fNIRS synonyms. Rater2 lexicon lacks both."
+    },
+    {
+      "doc_id": "P20",
+      "html": "<h1>P20</h1><p>Headset data is processed by service providers.</p><p>You have the right to be forgotten.</p>",
+      "notes": "Headset data + right to be forgotten. Rater2 misses both."
+    }
+  ],
+  "labels": [
+    {
+      "doc_id": "P01",
+      "notes": "Explicit neural + deletion.",
+      "status": "COMPLIANT",
+      "values": {
+        "covers_generic_device_data": false,
+        "discloses_sale": false,
+        "discloses_sharing": false,
+        "grants_deletion": true,
+        "names_neural_data": true,
+        "retention_conflicts_deletion": false,
+        "states_consent_for_sensitive": true,
+        "states_purpose_limitation": true
+      }
+    },
+    {
+      "doc_id": "P02",
+      "notes": "Generic device data. Keyword baseline misses names and generic cover.",
+      "status": "COMPLIANT",
+      "values": {
+        "covers_generic_device_data": true,
+        "discloses_sale": false,
+        "discloses_sharing": false,
+        "grants_deletion": true,
+        "names_neural_data": false,
+        "retention_conflicts_deletion": false,
+        "states_consent_for_sensitive": false,
+        "states_purpose_limitation": false
+      }
+    },
+    {
+      "doc_id": "P03",
+      "notes": "Deletion contradicted by retention.",
+      "status": "INDETERMINATE",
+      "values": {
+        "covers_generic_device_data": false,
+        "discloses_sale": false,
+        "discloses_sharing": false,
+        "grants_deletion": true,
+        "names_neural_data": true,
+        "retention_conflicts_deletion": true,
+        "states_consent_for_sensitive": false,
+        "states_purpose_limitation": false
+      }
+    },
+    {
+      "doc_id": "P04",
+      "notes": "Sale disclosed, no deletion.",
+      "status": "GAP",
+      "values": {
+        "covers_generic_device_data": false,
+        "discloses_sale": true,
+        "discloses_sharing": false,
+        "grants_deletion": false,
+        "names_neural_data": true,
+        "retention_conflicts_deletion": false,
+        "states_consent_for_sensitive": false,
+        "states_purpose_limitation": false
+      }
+    },
+    {
+      "doc_id": "P05",
+      "notes": "Neural named, no deletion.",
+      "status": "GAP",
+      "values": {
+        "covers_generic_device_data": false,
+        "discloses_sale": false,
+        "discloses_sharing": false,
+        "grants_deletion": false,
+        "names_neural_data": true,
+        "retention_conflicts_deletion": false,
+        "states_consent_for_sensitive": false,
+        "states_purpose_limitation": false
+      }
+    },
+    {
+      "doc_id": "P06",
+      "notes": "EEG is an explicit neural-data synonym.",
+      "status": "COMPLIANT",
+      "values": {
+        "covers_generic_device_data": false,
+        "discloses_sale": false,
+        "discloses_sharing": false,
+        "grants_deletion": true,
+        "names_neural_data": true,
+        "retention_conflicts_deletion": false,
+        "states_consent_for_sensitive": false,
+        "states_purpose_limitation": false
+      }
+    },
+    {
+      "doc_id": "P07",
+      "notes": "BCI + sharing + deletion.",
+      "status": "COMPLIANT",
+      "values": {
+        "covers_generic_device_data": false,
+        "discloses_sale": false,
+        "discloses_sharing": true,
+        "grants_deletion": true,
+        "names_neural_data": true,
+        "retention_conflicts_deletion": false,
+        "states_consent_for_sensitive": false,
+        "states_purpose_limitation": false
+      }
+    },
+    {
+      "doc_id": "P08",
+      "notes": "Erase synonym. Keyword and rater2 miss erasure-only deletion.",
+      "status": "COMPLIANT",
+      "values": {
+        "covers_generic_device_data": true,
+        "discloses_sale": false,
+        "discloses_sharing": false,
+        "grants_deletion": true,
+        "names_neural_data": false,
+        "retention_conflicts_deletion": false,
+        "states_consent_for_sensitive": false,
+        "states_purpose_limitation": false
+      }
+    },
+    {
+      "doc_id": "P09",
+      "notes": "Empty marketing policy.",
+      "status": "GAP",
+      "values": {
+        "covers_generic_device_data": false,
+        "discloses_sale": false,
+        "discloses_sharing": false,
+        "grants_deletion": false,
+        "names_neural_data": false,
+        "retention_conflicts_deletion": false,
+        "states_consent_for_sensitive": false,
+        "states_purpose_limitation": false
+      }
+    },
+    {
+      "doc_id": "P10",
+      "notes": "Brain activity + sale + advertisers.",
+      "status": "GAP",
+      "values": {
+        "covers_generic_device_data": false,
+        "discloses_sale": true,
+        "discloses_sharing": true,
+        "grants_deletion": false,
+        "names_neural_data": true,
+        "retention_conflicts_deletion": false,
+        "states_consent_for_sensitive": false,
+        "states_purpose_limitation": false
+      }
+    },
+    {
+      "doc_id": "P11",
+      "notes": "Consent + purpose + deletion.",
+      "status": "COMPLIANT",
+      "values": {
+        "covers_generic_device_data": false,
+        "discloses_sale": false,
+        "discloses_sharing": false,
+        "grants_deletion": true,
+        "names_neural_data": true,
+        "retention_conflicts_deletion": false,
+        "states_consent_for_sensitive": true,
+        "states_purpose_limitation": true
+      }
+    },
+    {
+      "doc_id": "P12",
+      "notes": "Wearable data generic cover.",
+      "status": "COMPLIANT",
+      "values": {
+        "covers_generic_device_data": true,
+        "discloses_sale": false,
+        "discloses_sharing": false,
+        "grants_deletion": true,
+        "names_neural_data": false,
+        "retention_conflicts_deletion": false,
+        "states_consent_for_sensitive": false,
+        "states_purpose_limitation": false
+      }
+    },
+    {
+      "doc_id": "P13",
+      "notes": "Request deletion vs will not delete.",
+      "status": "INDETERMINATE",
+      "values": {
+        "covers_generic_device_data": false,
+        "discloses_sale": false,
+        "discloses_sharing": false,
+        "grants_deletion": true,
+        "names_neural_data": true,
+        "retention_conflicts_deletion": true,
+        "states_consent_for_sensitive": false,
+        "states_purpose_limitation": false
+      }
+    },
+    {
+      "doc_id": "P14",
+      "notes": "Physiological data + erase. Rater2 misses both generic synonym and erase.",
+      "status": "COMPLIANT",
+      "values": {
+        "covers_generic_device_data": true,
+        "discloses_sale": false,
+        "discloses_sharing": false,
+        "grants_deletion": true,
+        "names_neural_data": false,
+        "retention_conflicts_deletion": false,
+        "states_consent_for_sensitive": false,
+        "states_purpose_limitation": false
+      }
+    },
+    {
+      "doc_id": "P15",
+      "notes": "Biometric sale is not neural data.",
+      "status": "GAP",
+      "values": {
+        "covers_generic_device_data": false,
+        "discloses_sale": true,
+        "discloses_sharing": false,
+        "grants_deletion": false,
+        "names_neural_data": false,
+        "retention_conflicts_deletion": false,
+        "states_consent_for_sensitive": false,
+        "states_purpose_limitation": false
+      }
+    },
+    {
+      "doc_id": "P16",
+      "notes": "CCPA-style SPI list. 'do not sell' still discloses sale as a topic.",
+      "status": "COMPLIANT",
+      "values": {
+        "covers_generic_device_data": false,
+        "discloses_sale": true,
+        "discloses_sharing": false,
+        "grants_deletion": true,
+        "names_neural_data": true,
+        "retention_conflicts_deletion": false,
+        "states_consent_for_sensitive": true,
+        "states_purpose_limitation": true
+      }
+    },
+    {
+      "doc_id": "P17",
+      "notes": "Colorado-style biological + neural.",
+      "status": "COMPLIANT",
+      "values": {
+        "covers_generic_device_data": false,
+        "discloses_sale": false,
+        "discloses_sharing": false,
+        "grants_deletion": true,
+        "names_neural_data": true,
+        "retention_conflicts_deletion": false,
+        "states_consent_for_sensitive": true,
+        "states_purpose_limitation": false
+      }
+    },
+    {
+      "doc_id": "P18",
+      "notes": "Vague sale, no neural category.",
+      "status": "GAP",
+      "values": {
+        "covers_generic_device_data": false,
+        "discloses_sale": true,
+        "discloses_sharing": false,
+        "grants_deletion": false,
+        "names_neural_data": false,
+        "retention_conflicts_deletion": false,
+        "states_consent_for_sensitive": false,
+        "states_purpose_limitation": false
+      }
+    },
+    {
+      "doc_id": "P19",
+      "notes": "MEG/fNIRS synonyms. Rater2 lexicon lacks both.",
+      "status": "COMPLIANT",
+      "values": {
+        "covers_generic_device_data": false,
+        "discloses_sale": false,
+        "discloses_sharing": false,
+        "grants_deletion": true,
+        "names_neural_data": true,
+        "retention_conflicts_deletion": false,
+        "states_consent_for_sensitive": false,
+        "states_purpose_limitation": false
+      }
+    },
+    {
+      "doc_id": "P20",
+      "notes": "Headset data + right to be forgotten. Rater2 misses both.",
+      "status": "COMPLIANT",
+      "values": {
+        "covers_generic_device_data": true,
+        "discloses_sale": false,
+        "discloses_sharing": true,
+        "grants_deletion": true,
+        "names_neural_data": false,
+        "retention_conflicts_deletion": false,
+        "states_consent_for_sensitive": false,
+        "states_purpose_limitation": false
+      }
+    }
+  ]
+}
