@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from datetime import date
+from pathlib import Path
 from typing import Literal
 
 from pydantic import BaseModel, Field
@@ -95,3 +97,33 @@ class AuditFinding(BaseModel):
     observation: str
     status: AuditStatus
     cited_spans: list[SpanCitation] = Field(default_factory=list)
+
+
+class VendorSnapshot(BaseModel):
+    """One dated designed policy fixture."""
+
+    vendor_id: str
+    filename: str
+    path: Path
+    snapshot_date: date
+
+
+class FieldDiff(BaseModel):
+    """One schema field that changed between dated snapshots."""
+
+    name: str
+    before: bool
+    after: bool
+    before_span: SpanCitation | None = None
+    after_span: SpanCitation | None = None
+    before_date: date
+    after_date: date
+
+
+class CaptureAttempt(BaseModel):
+    """Result of the gated network-capture stub."""
+
+    allowed: bool
+    operator_owns_device: bool
+    enabled: bool
+    reason: str

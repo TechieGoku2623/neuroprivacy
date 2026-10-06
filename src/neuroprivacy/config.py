@@ -11,11 +11,12 @@ from pydantic import BaseModel, Field
 class NetworkCaptureSettings(BaseModel):
     """Optional network observation. Off unless the operator opts in.
 
-    Network capture is gated to operator-owned devices. Phase 0 never
-    enables it. Circumvention of vendor protections is out of scope.
+    Network capture is gated to operator-owned devices. The stub refuses
+    unless operator_owns_device is true. Circumvention is out of scope.
     """
 
     enabled: bool = False
+    operator_owns_device: bool = False
     operator_owned_devices_only: bool = True
     require_explicit_opt_in: bool = True
 
@@ -41,11 +42,13 @@ class Settings(BaseModel):
 
 def get_settings() -> Settings:
     enabled = os.environ.get("NEUROPRIVACY_NETWORK_CAPTURE", "0") == "1"
+    owns_device = os.environ.get("NEUROPRIVACY_OPERATOR_OWNS_DEVICE", "0") == "1"
     return Settings(
         env=os.environ.get("NEUROPRIVACY_ENV", "dev"),
         pretty_logs=os.environ.get("NEUROPRIVACY_ENV", "dev") != "prod",
         network_capture=NetworkCaptureSettings(
             enabled=enabled,
+            operator_owns_device=owns_device,
             operator_owned_devices_only=True,
             require_explicit_opt_in=True,
         ),
@@ -53,10 +56,13 @@ def get_settings() -> Settings:
 
 
 def network_capture_allowed(settings: Settings | None = None) -> bool:
-    """True only when every gate is satisfied. Phase 0 default is False."""
+    """True only when every gate is satisfied. Default is False."""
 
     cfg = settings or get_settings()
     capture = cfg.network_capture
     return (
-        capture.enabled and capture.operator_owned_devices_only and capture.require_explicit_opt_in
+        capture.enabled
+        and capture.operator_owns_device
+        and capture.operator_owned_devices_only
+        and capture.require_explicit_opt_in
     )

@@ -26,6 +26,8 @@ def test_configure_logging_json(monkeypatch: object) -> None:
 
 def test_network_capture_env(monkeypatch: object) -> None:
     monkeypatch.setenv("NEUROPRIVACY_NETWORK_CAPTURE", "1")  # type: ignore[attr-defined]
+    monkeypatch.setenv("NEUROPRIVACY_OPERATOR_OWNS_DEVICE", "1")  # type: ignore[attr-defined]
     settings = get_settings()
     assert settings.network_capture.enabled is True
+    assert settings.network_capture.operator_owns_device is True
     assert network_capture_allowed(settings) is True

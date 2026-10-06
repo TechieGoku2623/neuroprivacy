@@ -1,7 +1,7 @@
 export PATH := $(HOME)/.local/bin:$(PATH)
 UV ?= uv
 
-.PHONY: setup lint test research eval demo record
+.PHONY: setup lint test research eval demo record report
 
 setup:
 	$(UV) sync --extra dev
@@ -24,8 +24,10 @@ eval:
 	$(UV) run python research/phase0/render_docs.py
 
 demo:
-	$(UV) run neuroprivacy demo-plan --dry-run
+	$(UV) run neuroprivacy demo
+
+report:
+	$(UV) run neuroprivacy report --out docs/report/index.html
 
 record:
-	@echo "Asciinema recordings are a Phase 3 deliverable (demo/*.cast)."
-	@echo "Phase 0 has no audit CLI to record."
+	$(UV) run python -c "from neuroprivacy.recordings import record_all; print(*record_all(), sep='\n')"

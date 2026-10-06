@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>neuroprivacy scorecard — observations only</title>
+<style>
+body{font-family:ui-sans-serif,system-ui,sans-serif;margin:2rem;max-width:1100px;color:#122}
+h1,h2{color:#0b3d4a}
+table{border-collapse:collapse;width:100%;margin:1rem 0}
+th,td{border:1px solid #c5d0d4;padding:.45rem .6rem;text-align:left;vertical-align:top}
+th{background:#e8f2f4}
+.COMPLIANT{color:#0b6b2a;font-weight:600}
+.GAP{color:#9b1c1c;font-weight:600}
+.INDETERMINATE{color:#8a5a00;font-weight:600}
+.note{background:#f6f1e4;padding:.8rem 1rem;border-left:4px solid #c4a35a}
+code{background:#eef3f5;padding:.1rem .3rem}
+</style>
+</head>
+<body>
+<h1>neuroprivacy scorecard</h1>
+<p class="note">Observations only. This output is not a legal conclusion, not legal advice, and not a compliance certification. Public policies only; no circumvention.</p>
+<p>Generated from committed <code>data/sample/</code> fixtures. LLM extraction uses the committed cache only. Statutory scoring is deterministic. Network capture is off unless <code>operator_owns_device=true</code>.</p>
+<h2>vendor-a — vendor-a.html</h2>
+<p>Extractor status: <span class="COMPLIANT">COMPLIANT</span>. Keyword baseline neural-data: True. Keyword generic cover: False.</p>
+<table><tr><th>Field</th><th>Value</th><th>Span (offsets)</th></tr>
+<tr><td><code>covers_generic_device_data</code></td><td>False</td><td>—</td></tr>
+<tr><td><code>discloses_sale</code></td><td>True</td><td>"sell" [515:519]</td></tr>
+<tr><td><code>discloses_sharing</code></td><td>False</td><td>—</td></tr>
+<tr><td><code>grants_deletion</code></td><td>True</td><td>"right to delete" [254:269]</td></tr>
+<tr><td><code>names_neural_data</code></td><td>True</td><td>"neural data" [170:181]</td></tr>
+<tr><td><code>retention_conflicts_deletion</code></td><td>False</td><td>—</td></tr>
+<tr><td><code>states_consent_for_sensitive</code></td><td>True</td><td>"consent" [335:342]</td></tr>
+<tr><td><code>states_purpose_limitation</code></td><td>True</td><td>"only for the specified purpose" [404:434]</td></tr>
+</table>
+<table><tr><th>Clause</th><th>Statute</th><th>Status</th><th>Observation</th></tr>
+<tr><td><code>CO-DEF-NEURAL</code></td><td>C.R.S. § 6-1-1303 (as amended by HB24-1058)</td><td class="COMPLIANT">COMPLIANT</td><td>Policy names neural data.</td></tr>
+<tr><td><code>CO-SENSITIVE</code></td><td>C.R.S. § 6-1-1303 (sensitive data definition)</td><td class="COMPLIANT">COMPLIANT</td><td>Policy names neural data.</td></tr>
+<tr><td><code>CO-CONSENT</code></td><td>C.R.S. § 6-1-1308(7)</td><td class="COMPLIANT">COMPLIANT</td><td>At least one mapped field is present for C.R.S. § 6-1-1308(7).</td></tr>
+<tr><td><code>CO-DELETE</code></td><td>C.R.S. § 6-1-1306(1)(d)</td><td class="COMPLIANT">COMPLIANT</td><td>Deletion right is stated in the policy text.</td></tr>
+<tr><td><code>CO-ACCESS</code></td><td>C.R.S. § 6-1-1306(1)(b)</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1306(1)(b) is policy-text-checkable in principle, but the Phase 0 schema has no field for it. Unmeasured.</td></tr>
+<tr><td><code>CO-CORRECT</code></td><td>C.R.S. § 6-1-1306(1)(c)</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1306(1)(c) is policy-text-checkable in principle, but the Phase 0 schema has no field for it. Unmeasured.</td></tr>
+<tr><td><code>CO-OPTOUT</code></td><td>C.R.S. § 6-1-1306(1)(a)</td><td class="COMPLIANT">COMPLIANT</td><td>At least one mapped field is present for C.R.S. § 6-1-1306(1)(a).</td></tr>
+<tr><td><code>CO-PURPOSE</code></td><td>C.R.S. § 6-1-1308(1)–(3)</td><td class="COMPLIANT">COMPLIANT</td><td>At least one mapped field is present for C.R.S. § 6-1-1308(1)–(3).</td></tr>
+<tr><td><code>CO-DPA</code></td><td>C.R.S. § 6-1-1309</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1309 is not machine-checkable from policy text (internal_record). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CO-PROCESSOR</code></td><td>C.R.S. § 6-1-1305</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1305 is not machine-checkable from policy text (internal_record). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CO-THRESHOLD</code></td><td>C.R.S. § 6-1-1304</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1304 is not machine-checkable from policy text (cannot_check). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CO-TRANSMIT</code></td><td>C.R.S. § 6-1-1308 (processing duties) applied to device telemetry</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1308 (processing duties) applied to device telemetry is not machine-checkable from policy text (network_or_product). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CA-DEF-NEURAL</code></td><td>Cal. Civ. Code § 1798.140 (SB 1223 amendment)</td><td class="COMPLIANT">COMPLIANT</td><td>Policy names neural data.</td></tr>
+<tr><td><code>CA-SPI</code></td><td>Cal. Civ. Code § 1798.140 (sensitive personal information)</td><td class="COMPLIANT">COMPLIANT</td><td>Policy names neural data.</td></tr>
+<tr><td><code>CA-NOTICE</code></td><td>Cal. Civ. Code § 1798.100</td><td class="COMPLIANT">COMPLIANT</td><td>Policy names neural data.</td></tr>
+<tr><td><code>CA-POLICY-LIST</code></td><td>Cal. Civ. Code § 1798.130</td><td class="COMPLIANT">COMPLIANT</td><td>Policy names neural data.</td></tr>
+<tr><td><code>CA-LIMIT</code></td><td>Cal. Civ. Code § 1798.121</td><td class="COMPLIANT">COMPLIANT</td><td>At least one mapped field is present for Cal. Civ. Code § 1798.121.</td></tr>
+<tr><td><code>CA-SALE</code></td><td>Cal. Civ. Code § 1798.120</td><td class="COMPLIANT">COMPLIANT</td><td>At least one mapped field is present for Cal. Civ. Code § 1798.120.</td></tr>
+<tr><td><code>CA-INFERENCE</code></td><td>Cal. Civ. Code § 1798.140 neural-data definition (non-inference clause)</td><td class="INDETERMINATE">INDETERMINATE</td><td>Cal. Civ. Code § 1798.140 neural-data definition (non-inference clause) is not machine-checkable from policy text (cannot_check). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CA-CONTRACT</code></td><td>Cal. Civ. Code § 1798.140 (service provider / contractor)</td><td class="INDETERMINATE">INDETERMINATE</td><td>Cal. Civ. Code § 1798.140 (service provider / contractor) is not machine-checkable from policy text (internal_record). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CA-ENFORCE</code></td><td>Cal. Civ. Code § 1798.199.40 et seq. (CPPA / AG enforcement)</td><td class="INDETERMINATE">INDETERMINATE</td><td>Cal. Civ. Code § 1798.199.40 et seq. (CPPA / AG enforcement) is not machine-checkable from policy text (cannot_check). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CA-DEVICE</code></td><td>Cal. Civ. Code § 1798.121 applied to on-device neural streams</td><td class="INDETERMINATE">INDETERMINATE</td><td>Cal. Civ. Code § 1798.121 applied to on-device neural streams is not machine-checkable from policy text (network_or_product). Unmeasured in Phase 0.</td></tr>
+</table>
+<h2>vendor-b — vendor-b.html</h2>
+<p>Extractor status: <span class="COMPLIANT">COMPLIANT</span>. Keyword baseline neural-data: False. Keyword generic cover: False.</p>
+<table><tr><th>Field</th><th>Value</th><th>Span (offsets)</th></tr>
+<tr><td><code>covers_generic_device_data</code></td><td>True</td><td>"device data" [180:191]</td></tr>
+<tr><td><code>discloses_sale</code></td><td>False</td><td>—</td></tr>
+<tr><td><code>discloses_sharing</code></td><td>True</td><td>"service providers" [347:364]</td></tr>
+<tr><td><code>grants_deletion</code></td><td>True</td><td>"right to delete" [281:296]</td></tr>
+<tr><td><code>names_neural_data</code></td><td>False</td><td>—</td></tr>
+<tr><td><code>retention_conflicts_deletion</code></td><td>False</td><td>—</td></tr>
+<tr><td><code>states_consent_for_sensitive</code></td><td>False</td><td>—</td></tr>
+<tr><td><code>states_purpose_limitation</code></td><td>False</td><td>—</td></tr>
+</table>
+<table><tr><th>Clause</th><th>Statute</th><th>Status</th><th>Observation</th></tr>
+<tr><td><code>CO-DEF-NEURAL</code></td><td>C.R.S. § 6-1-1303 (as amended by HB24-1058)</td><td class="INDETERMINATE">INDETERMINATE</td><td>Coverage is only under generic device data; neural data is not named.</td></tr>
+<tr><td><code>CO-SENSITIVE</code></td><td>C.R.S. § 6-1-1303 (sensitive data definition)</td><td class="GAP">GAP</td><td>Policy does not name neural data.</td></tr>
+<tr><td><code>CO-CONSENT</code></td><td>C.R.S. § 6-1-1308(7)</td><td class="GAP">GAP</td><td>No mapped field is present for C.R.S. § 6-1-1308(7).</td></tr>
+<tr><td><code>CO-DELETE</code></td><td>C.R.S. § 6-1-1306(1)(d)</td><td class="COMPLIANT">COMPLIANT</td><td>Deletion right is stated in the policy text.</td></tr>
+<tr><td><code>CO-ACCESS</code></td><td>C.R.S. § 6-1-1306(1)(b)</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1306(1)(b) is policy-text-checkable in principle, but the Phase 0 schema has no field for it. Unmeasured.</td></tr>
+<tr><td><code>CO-CORRECT</code></td><td>C.R.S. § 6-1-1306(1)(c)</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1306(1)(c) is policy-text-checkable in principle, but the Phase 0 schema has no field for it. Unmeasured.</td></tr>
+<tr><td><code>CO-OPTOUT</code></td><td>C.R.S. § 6-1-1306(1)(a)</td><td class="GAP">GAP</td><td>No mapped field is present for C.R.S. § 6-1-1306(1)(a).</td></tr>
+<tr><td><code>CO-PURPOSE</code></td><td>C.R.S. § 6-1-1308(1)–(3)</td><td class="GAP">GAP</td><td>No mapped field is present for C.R.S. § 6-1-1308(1)–(3).</td></tr>
+<tr><td><code>CO-DPA</code></td><td>C.R.S. § 6-1-1309</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1309 is not machine-checkable from policy text (internal_record). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CO-PROCESSOR</code></td><td>C.R.S. § 6-1-1305</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1305 is not machine-checkable from policy text (internal_record). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CO-THRESHOLD</code></td><td>C.R.S. § 6-1-1304</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1304 is not machine-checkable from policy text (cannot_check). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CO-TRANSMIT</code></td><td>C.R.S. § 6-1-1308 (processing duties) applied to device telemetry</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1308 (processing duties) applied to device telemetry is not machine-checkable from policy text (network_or_product). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CA-DEF-NEURAL</code></td><td>Cal. Civ. Code § 1798.140 (SB 1223 amendment)</td><td class="GAP">GAP</td><td>Policy does not name neural data.</td></tr>
+<tr><td><code>CA-SPI</code></td><td>Cal. Civ. Code § 1798.140 (sensitive personal information)</td><td class="GAP">GAP</td><td>Policy does not name neural data.</td></tr>
+<tr><td><code>CA-NOTICE</code></td><td>Cal. Civ. Code § 1798.100</td><td class="INDETERMINATE">INDETERMINATE</td><td>Coverage is only under generic device data; neural data is not named.</td></tr>
+<tr><td><code>CA-POLICY-LIST</code></td><td>Cal. Civ. Code § 1798.130</td><td class="GAP">GAP</td><td>Policy does not name neural data.</td></tr>
+<tr><td><code>CA-LIMIT</code></td><td>Cal. Civ. Code § 1798.121</td><td class="COMPLIANT">COMPLIANT</td><td>At least one mapped field is present for Cal. Civ. Code § 1798.121.</td></tr>
+<tr><td><code>CA-SALE</code></td><td>Cal. Civ. Code § 1798.120</td><td class="COMPLIANT">COMPLIANT</td><td>At least one mapped field is present for Cal. Civ. Code § 1798.120.</td></tr>
+<tr><td><code>CA-INFERENCE</code></td><td>Cal. Civ. Code § 1798.140 neural-data definition (non-inference clause)</td><td class="INDETERMINATE">INDETERMINATE</td><td>Cal. Civ. Code § 1798.140 neural-data definition (non-inference clause) is not machine-checkable from policy text (cannot_check). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CA-CONTRACT</code></td><td>Cal. Civ. Code § 1798.140 (service provider / contractor)</td><td class="INDETERMINATE">INDETERMINATE</td><td>Cal. Civ. Code § 1798.140 (service provider / contractor) is not machine-checkable from policy text (internal_record). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CA-ENFORCE</code></td><td>Cal. Civ. Code § 1798.199.40 et seq. (CPPA / AG enforcement)</td><td class="INDETERMINATE">INDETERMINATE</td><td>Cal. Civ. Code § 1798.199.40 et seq. (CPPA / AG enforcement) is not machine-checkable from policy text (cannot_check). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CA-DEVICE</code></td><td>Cal. Civ. Code § 1798.121 applied to on-device neural streams</td><td class="INDETERMINATE">INDETERMINATE</td><td>Cal. Civ. Code § 1798.121 applied to on-device neural streams is not machine-checkable from policy text (network_or_product). Unmeasured in Phase 0.</td></tr>
+</table>
+<h2>vendor-c — vendor-c.html</h2>
+<p>Extractor status: <span class="INDETERMINATE">INDETERMINATE</span>. Keyword baseline neural-data: True. Keyword generic cover: False.</p>
+<table><tr><th>Field</th><th>Value</th><th>Span (offsets)</th></tr>
+<tr><td><code>covers_generic_device_data</code></td><td>False</td><td>—</td></tr>
+<tr><td><code>discloses_sale</code></td><td>False</td><td>—</td></tr>
+<tr><td><code>discloses_sharing</code></td><td>False</td><td>—</td></tr>
+<tr><td><code>grants_deletion</code></td><td>True</td><td>"right to delete" [221:236]</td></tr>
+<tr><td><code>names_neural_data</code></td><td>True</td><td>"neural data" [170:181]</td></tr>
+<tr><td><code>retention_conflicts_deletion</code></td><td>True</td><td>"cannot delete" [333:346]</td></tr>
+<tr><td><code>states_consent_for_sensitive</code></td><td>False</td><td>—</td></tr>
+<tr><td><code>states_purpose_limitation</code></td><td>False</td><td>—</td></tr>
+</table>
+<table><tr><th>Clause</th><th>Statute</th><th>Status</th><th>Observation</th></tr>
+<tr><td><code>CO-DEF-NEURAL</code></td><td>C.R.S. § 6-1-1303 (as amended by HB24-1058)</td><td class="COMPLIANT">COMPLIANT</td><td>Policy names neural data.</td></tr>
+<tr><td><code>CO-SENSITIVE</code></td><td>C.R.S. § 6-1-1303 (sensitive data definition)</td><td class="COMPLIANT">COMPLIANT</td><td>Policy names neural data.</td></tr>
+<tr><td><code>CO-CONSENT</code></td><td>C.R.S. § 6-1-1308(7)</td><td class="GAP">GAP</td><td>No mapped field is present for C.R.S. § 6-1-1308(7).</td></tr>
+<tr><td><code>CO-DELETE</code></td><td>C.R.S. § 6-1-1306(1)(d)</td><td class="INDETERMINATE">INDETERMINATE</td><td>Deletion is stated and contradicted by retention. INDETERMINATE.</td></tr>
+<tr><td><code>CO-ACCESS</code></td><td>C.R.S. § 6-1-1306(1)(b)</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1306(1)(b) is policy-text-checkable in principle, but the Phase 0 schema has no field for it. Unmeasured.</td></tr>
+<tr><td><code>CO-CORRECT</code></td><td>C.R.S. § 6-1-1306(1)(c)</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1306(1)(c) is policy-text-checkable in principle, but the Phase 0 schema has no field for it. Unmeasured.</td></tr>
+<tr><td><code>CO-OPTOUT</code></td><td>C.R.S. § 6-1-1306(1)(a)</td><td class="GAP">GAP</td><td>No mapped field is present for C.R.S. § 6-1-1306(1)(a).</td></tr>
+<tr><td><code>CO-PURPOSE</code></td><td>C.R.S. § 6-1-1308(1)–(3)</td><td class="GAP">GAP</td><td>No mapped field is present for C.R.S. § 6-1-1308(1)–(3).</td></tr>
+<tr><td><code>CO-DPA</code></td><td>C.R.S. § 6-1-1309</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1309 is not machine-checkable from policy text (internal_record). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CO-PROCESSOR</code></td><td>C.R.S. § 6-1-1305</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1305 is not machine-checkable from policy text (internal_record). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CO-THRESHOLD</code></td><td>C.R.S. § 6-1-1304</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1304 is not machine-checkable from policy text (cannot_check). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CO-TRANSMIT</code></td><td>C.R.S. § 6-1-1308 (processing duties) applied to device telemetry</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1308 (processing duties) applied to device telemetry is not machine-checkable from policy text (network_or_product). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CA-DEF-NEURAL</code></td><td>Cal. Civ. Code § 1798.140 (SB 1223 amendment)</td><td class="COMPLIANT">COMPLIANT</td><td>Policy names neural data.</td></tr>
+<tr><td><code>CA-SPI</code></td><td>Cal. Civ. Code § 1798.140 (sensitive personal information)</td><td class="COMPLIANT">COMPLIANT</td><td>Policy names neural data.</td></tr>
+<tr><td><code>CA-NOTICE</code></td><td>Cal. Civ. Code § 1798.100</td><td class="COMPLIANT">COMPLIANT</td><td>Policy names neural data.</td></tr>
+<tr><td><code>CA-POLICY-LIST</code></td><td>Cal. Civ. Code § 1798.130</td><td class="COMPLIANT">COMPLIANT</td><td>Policy names neural data.</td></tr>
+<tr><td><code>CA-LIMIT</code></td><td>Cal. Civ. Code § 1798.121</td><td class="GAP">GAP</td><td>No mapped field is present for Cal. Civ. Code § 1798.121.</td></tr>
+<tr><td><code>CA-SALE</code></td><td>Cal. Civ. Code § 1798.120</td><td class="GAP">GAP</td><td>No mapped field is present for Cal. Civ. Code § 1798.120.</td></tr>
+<tr><td><code>CA-INFERENCE</code></td><td>Cal. Civ. Code § 1798.140 neural-data definition (non-inference clause)</td><td class="INDETERMINATE">INDETERMINATE</td><td>Cal. Civ. Code § 1798.140 neural-data definition (non-inference clause) is not machine-checkable from policy text (cannot_check). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CA-CONTRACT</code></td><td>Cal. Civ. Code § 1798.140 (service provider / contractor)</td><td class="INDETERMINATE">INDETERMINATE</td><td>Cal. Civ. Code § 1798.140 (service provider / contractor) is not machine-checkable from policy text (internal_record). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CA-ENFORCE</code></td><td>Cal. Civ. Code § 1798.199.40 et seq. (CPPA / AG enforcement)</td><td class="INDETERMINATE">INDETERMINATE</td><td>Cal. Civ. Code § 1798.199.40 et seq. (CPPA / AG enforcement) is not machine-checkable from policy text (cannot_check). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CA-DEVICE</code></td><td>Cal. Civ. Code § 1798.121 applied to on-device neural streams</td><td class="INDETERMINATE">INDETERMINATE</td><td>Cal. Civ. Code § 1798.121 applied to on-device neural streams is not machine-checkable from policy text (network_or_product). Unmeasured in Phase 0.</td></tr>
+</table>
+<h2>vendor-d — vendor-d-2025-06.html</h2>
+<p>Extractor status: <span class="COMPLIANT">COMPLIANT</span>. Keyword baseline neural-data: True. Keyword generic cover: False.</p>
+<table><tr><th>Field</th><th>Value</th><th>Span (offsets)</th></tr>
+<tr><td><code>covers_generic_device_data</code></td><td>False</td><td>—</td></tr>
+<tr><td><code>discloses_sale</code></td><td>False</td><td>—</td></tr>
+<tr><td><code>discloses_sharing</code></td><td>False</td><td>—</td></tr>
+<tr><td><code>grants_deletion</code></td><td>True</td><td>"right to delete" [235:250]</td></tr>
+<tr><td><code>names_neural_data</code></td><td>True</td><td>"neural data" [183:194]</td></tr>
+<tr><td><code>retention_conflicts_deletion</code></td><td>False</td><td>—</td></tr>
+<tr><td><code>states_consent_for_sensitive</code></td><td>True</td><td>"consent" [274:281]</td></tr>
+<tr><td><code>states_purpose_limitation</code></td><td>False</td><td>—</td></tr>
+</table>
+<table><tr><th>Clause</th><th>Statute</th><th>Status</th><th>Observation</th></tr>
+<tr><td><code>CO-DEF-NEURAL</code></td><td>C.R.S. § 6-1-1303 (as amended by HB24-1058)</td><td class="COMPLIANT">COMPLIANT</td><td>Policy names neural data.</td></tr>
+<tr><td><code>CO-SENSITIVE</code></td><td>C.R.S. § 6-1-1303 (sensitive data definition)</td><td class="COMPLIANT">COMPLIANT</td><td>Policy names neural data.</td></tr>
+<tr><td><code>CO-CONSENT</code></td><td>C.R.S. § 6-1-1308(7)</td><td class="COMPLIANT">COMPLIANT</td><td>At least one mapped field is present for C.R.S. § 6-1-1308(7).</td></tr>
+<tr><td><code>CO-DELETE</code></td><td>C.R.S. § 6-1-1306(1)(d)</td><td class="COMPLIANT">COMPLIANT</td><td>Deletion right is stated in the policy text.</td></tr>
+<tr><td><code>CO-ACCESS</code></td><td>C.R.S. § 6-1-1306(1)(b)</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1306(1)(b) is policy-text-checkable in principle, but the Phase 0 schema has no field for it. Unmeasured.</td></tr>
+<tr><td><code>CO-CORRECT</code></td><td>C.R.S. § 6-1-1306(1)(c)</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1306(1)(c) is policy-text-checkable in principle, but the Phase 0 schema has no field for it. Unmeasured.</td></tr>
+<tr><td><code>CO-OPTOUT</code></td><td>C.R.S. § 6-1-1306(1)(a)</td><td class="GAP">GAP</td><td>No mapped field is present for C.R.S. § 6-1-1306(1)(a).</td></tr>
+<tr><td><code>CO-PURPOSE</code></td><td>C.R.S. § 6-1-1308(1)–(3)</td><td class="GAP">GAP</td><td>No mapped field is present for C.R.S. § 6-1-1308(1)–(3).</td></tr>
+<tr><td><code>CO-DPA</code></td><td>C.R.S. § 6-1-1309</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1309 is not machine-checkable from policy text (internal_record). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CO-PROCESSOR</code></td><td>C.R.S. § 6-1-1305</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1305 is not machine-checkable from policy text (internal_record). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CO-THRESHOLD</code></td><td>C.R.S. § 6-1-1304</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1304 is not machine-checkable from policy text (cannot_check). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CO-TRANSMIT</code></td><td>C.R.S. § 6-1-1308 (processing duties) applied to device telemetry</td><td class="INDETERMINATE">INDETERMINATE</td><td>C.R.S. § 6-1-1308 (processing duties) applied to device telemetry is not machine-checkable from policy text (network_or_product). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CA-DEF-NEURAL</code></td><td>Cal. Civ. Code § 1798.140 (SB 1223 amendment)</td><td class="COMPLIANT">COMPLIANT</td><td>Policy names neural data.</td></tr>
+<tr><td><code>CA-SPI</code></td><td>Cal. Civ. Code § 1798.140 (sensitive personal information)</td><td class="COMPLIANT">COMPLIANT</td><td>Policy names neural data.</td></tr>
+<tr><td><code>CA-NOTICE</code></td><td>Cal. Civ. Code § 1798.100</td><td class="COMPLIANT">COMPLIANT</td><td>Policy names neural data.</td></tr>
+<tr><td><code>CA-POLICY-LIST</code></td><td>Cal. Civ. Code § 1798.130</td><td class="COMPLIANT">COMPLIANT</td><td>Policy names neural data.</td></tr>
+<tr><td><code>CA-LIMIT</code></td><td>Cal. Civ. Code § 1798.121</td><td class="GAP">GAP</td><td>No mapped field is present for Cal. Civ. Code § 1798.121.</td></tr>
+<tr><td><code>CA-SALE</code></td><td>Cal. Civ. Code § 1798.120</td><td class="GAP">GAP</td><td>No mapped field is present for Cal. Civ. Code § 1798.120.</td></tr>
+<tr><td><code>CA-INFERENCE</code></td><td>Cal. Civ. Code § 1798.140 neural-data definition (non-inference clause)</td><td class="INDETERMINATE">INDETERMINATE</td><td>Cal. Civ. Code § 1798.140 neural-data definition (non-inference clause) is not machine-checkable from policy text (cannot_check). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CA-CONTRACT</code></td><td>Cal. Civ. Code § 1798.140 (service provider / contractor)</td><td class="INDETERMINATE">INDETERMINATE</td><td>Cal. Civ. Code § 1798.140 (service provider / contractor) is not machine-checkable from policy text (internal_record). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CA-ENFORCE</code></td><td>Cal. Civ. Code § 1798.199.40 et seq. (CPPA / AG enforcement)</td><td class="INDETERMINATE">INDETERMINATE</td><td>Cal. Civ. Code § 1798.199.40 et seq. (CPPA / AG enforcement) is not machine-checkable from policy text (cannot_check). Unmeasured in Phase 0.</td></tr>
+<tr><td><code>CA-DEVICE</code></td><td>Cal. Civ. Code § 1798.121 applied to on-device neural streams</td><td class="INDETERMINATE">INDETERMINATE</td><td>Cal. Civ. Code § 1798.121 applied to on-device neural streams is not machine-checkable from policy text (network_or_product). Unmeasured in Phase 0.</td></tr>
+</table>
+<p>Dated drift since 2025-01-01: <code>discloses_sharing</code> True → False (vendor-d-2025-01.html vs vendor-d-2025-06.html).</p>
+<p>Observations only. This output is not a legal conclusion, not legal advice, and not a compliance certification. Public policies only; no circumvention.</p>
+</body>
+</html>

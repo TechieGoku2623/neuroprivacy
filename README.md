@@ -12,10 +12,10 @@ deterministic rules against Colorado HB24-1058 and California SB 1223.
 
 | Phase | Deliverable | Status |
 | --- | --- | --- |
-| 0 | Research memo and harnesses | In review — docs/phase-0/research-memo.md |
-| 1 | Architecture, schemas, data contracts | Not started |
-| 2 | First vertical slice | Not started |
-| 3 | Evaluation and demo | Not started |
+| 0 | Research memo and harnesses | Phase 0–3 Merged |
+| 1 | Architecture, schemas, data contracts | Phase 0–3 Merged |
+| 2 | First vertical slice | Phase 0–3 Merged |
+| 3 | Evaluation and demo | Phase 0–3 Merged |
 
 Status values: Not started / In progress / In review / Merged.
 
@@ -34,90 +34,155 @@ runs, is optional, gated, and limited to operator-owned devices.
 
 ## Walkthrough
 
-Phase 0 ships the designed sample set and the measurement harnesses. A full
-`neuroprivacy audit` command is reserved for Phase 2; running it now is not
-implemented on purpose.
+`make demo` is the full walkthrough. No credentials. Under five minutes.
+It runs extract, audit (keyword miss + conflicts), dated diff, and the
+static HTML report from committed fixtures.
 
-### Step 1 — designed sample set
-
-```bash
-make setup && make demo
-```
-
-`make demo` calls `neuroprivacy demo-plan --dry-run`. Actual stdout:
-
-```
-neuroprivacy designed sample policies
-
-vendor-a  vendor-a.html
-  path:     explicit neural data + deletion right
-  expected: Extractor cites neural-data and deletion spans. Status COMPLIANT.
-  file:     data/sample/vendor-a.html
-
-vendor-b  vendor-b.html
-  path:     generic device data only
-  expected: Keyword baseline names_neural_data=false and no generic cover. Rules extractor flags generic device data.
-  file:     data/sample/vendor-b.html
-
-vendor-c  vendor-c.html
-  path:     deletion contradicted by retention
-  expected: Status INDETERMINATE. Do not emit a single compliant/gap label.
-  file:     data/sample/vendor-c.html
-
-vendor-d  vendor-d-2025-01.html + vendor-d-2025-06.html
-  path:     policy drift / clause removed
-  expected: Diff reports discloses_sharing true→false. Monitoring cadence input.
-  file:     data/sample/vendor-d-2025-01.html
-  file:     data/sample/vendor-d-2025-06.html
-
-Observations only. This output is not a legal conclusion, not legal advice, and not a compliance certification. Public policies only; no circumvention.
-Network capture enabled: False (operator-owned devices only; off in Phase 0).
-
-Dry run only. A full `neuroprivacy audit` CLI is Phase 2; this command exists so `make demo` can show that the sample set is designed, not scraped.
-Sample directory: data/sample
-```
-
-The records are designed: a compliant naming, a keyword miss, a
-contradiction, and a mid-year clause removal. See `data/sample/README.md`.
-
-Recordings `demo/01-audit-vendor-a.cast` land in Phase 3.
-
-### Step 2 — explicit neural data (Phase 2)
+### Step 1 — extract with spans
 
 ```bash
-neuroprivacy audit data/sample/vendor-a.html
+make setup && neuroprivacy extract --doc data/sample/vendor-a.html
 ```
 
-Reserved. Sample vendor-a. The span trail is the product, not a pass/fail badge.
+Actual stdout:
 
-### Step 3 — generic device data (Phase 2)
+```
+neuroprivacy extract
+doc: /agent/repos/neuroprivacy/data/sample/vendor-a.html
+LLM: committed cache only (no live model). Span-level citation is mandatory.
+                      Structured fields — vendor-a (cache)
+┏━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┓
+┃ field                   ┃ value ┃ source ┃ span text               ┃ offsets ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━┩
+│ covers_generic_device_… │ false │ cache  │ —                       │ —       │
+│ discloses_sale          │ true  │ cache  │ sell                    │ 515:519 │
+│ discloses_sharing       │ false │ cache  │ —                       │ —       │
+│ grants_deletion         │ true  │ cache  │ right to delete         │ 254:269 │
+│ names_neural_data       │ true  │ cache  │ neural data             │ 170:181 │
+│ retention_conflicts_de… │ false │ cache  │ —                       │ —       │
+│ states_consent_for_sen… │ true  │ cache  │ consent                 │ 335:342 │
+│ states_purpose_limitat… │ true  │ cache  │ only for the specified  │ 404:434 │
+│                         │       │        │ purpose                 │         │
+└─────────────────────────┴───────┴────────┴─────────────────────────┴─────────┘
+document status: COMPLIANT
+  observation: Neural data is named and a deletion right is stated.
+prompt_hash: 3f997be6171ebde525b5a5f980a3ddf2df53f5669c9b8732f4d776ff04b277ea
+span-level citation: every true field has character offsets.
+Observations only. This output is not a legal conclusion, not legal advice, and
+not a compliance certification. Public policies only; no circumvention.
+```
+
+LLM extraction uses the committed cache only. Every true field carries a
+source span and character offsets.
+
+### Step 2 — audit vendor-b (keyword baseline finds nothing)
 
 ```bash
-neuroprivacy audit data/sample/vendor-b.html
+neuroprivacy audit --vendor vendor-b
 ```
 
-Reserved. Sample vendor-b. The keyword baseline misses this document. The
-extractor must still cite "device data".
+Actual stdout (keyword comparison and fields; the CO/CA scorecard follows
+in the same command):
 
-### Step 4 — contradiction (Phase 2)
+```
+neuroprivacy audit
+vendor: vendor-b  file: vendor-b.html  dated: 2024-06-01
+extractor status: COMPLIANT  source: cache
+Keyword baseline comparison
+  names_neural_data=false  covers_generic_device_data=false
+  baseline finds nothing: no neural/brain/EEG token and no generic-cover rule.
+  rules extractor names_neural_data=false  covers_generic_device_data=true
+                     Structured fields — vendor-b (cache)
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┓
+┃ field                        ┃ value ┃ source ┃ span text         ┃ offsets ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━┩
+│ covers_generic_device_data   │ true  │ cache  │ device data       │ 180:191 │
+│ discloses_sale               │ false │ cache  │ —                 │ —       │
+│ discloses_sharing            │ true  │ cache  │ service providers │ 347:364 │
+│ grants_deletion              │ true  │ cache  │ right to delete   │ 281:296 │
+│ names_neural_data            │ false │ cache  │ —                 │ —       │
+│ retention_conflicts_deletion │ false │ cache  │ —                 │ —       │
+│ states_consent_for_sensitive │ false │ cache  │ —                 │ —       │
+│ states_purpose_limitation    │ false │ cache  │ —                 │ —       │
+└──────────────────────────────┴───────┴────────┴───────────────────┴─────────┘
+document status: COMPLIANT
+  observation: Coverage is only under a generic device-data category.
+```
+
+The keyword baseline finds nothing for neural data. The rules extractor
+still cites `device data` at `[180:191]` and scores CO/CA clauses.
+
+### Step 3 — conflicting spans (INDETERMINATE)
 
 ```bash
-neuroprivacy audit data/sample/vendor-c.html
+neuroprivacy audit --vendor vendor-c --show-conflicts
 ```
 
-Reserved. Sample vendor-c. The output must be INDETERMINATE. This is the
-case a naive scanner gets confidently wrong.
+Actual stdout (conflict block):
 
-### Step 5 — drift, then the measured baseline
+```
+Conflicting spans
+  1. grants_deletion: "right to delete" [221:236]
+  2. retention_conflicts_deletion: "cannot delete" [333:346]
+  CO-DELETE status: INDETERMINATE
+  observation: Deletion is stated and contradicted by retention. INDETERMINATE.
+Observations only. This output is not a legal conclusion, not legal advice, and
+not a compliance certification. Public policies only; no circumvention.
+```
+
+Two spans. The deletion clause is INDETERMINATE. This is not a legal
+conclusion.
+
+### Step 4 — dated drift, then the HTML report
 
 ```bash
-neuroprivacy audit data/sample/vendor-d-2025-01.html data/sample/vendor-d-2025-06.html
-make eval
+neuroprivacy diff --vendor vendor-d --since 2025-01-01
+make report
 ```
 
-`neuroprivacy audit` on vendor-d is reserved (diff of two snapshots).
-`make eval` already runs: it regenerates `docs/EVALUATION.md` from the Phase
-0 harnesses. The extractor column in Results is that output.
+Actual stdout:
+
+```
+neuroprivacy diff
+vendor: vendor-d  since: 2025-01-01
+  2025-01-15  vendor-d-2025-01.html
+  2025-06-15  vendor-d-2025-06.html
+                          Removed or changed clauses
+┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┓
+┃ field             ┃ before            ┃ after              ┃ change         ┃
+┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━┩
+│ discloses_sharing │ true (2025-01-15) │ false (2025-06-15) │ removed clause │
+└───────────────────┴───────────────────┴────────────────────┴────────────────┘
+Observations only. This output is not a legal conclusion, not legal advice, and
+not a compliance certification. Public policies only; no circumvention.
+```
+
+```
+wrote docs/report/index.html
+Observations only. This output is not a legal conclusion, not legal advice, and
+not a compliance certification. Public policies only; no circumvention.
+```
+
+`make eval` still regenerates `docs/EVALUATION.md` from the Phase 0
+harnesses. Recordings: `demo/01-extract-with-spans.cast`,
+`demo/02-audit-and-conflicts.cast`, `demo/03-drift-and-report.cast`.
+
+## Network capture (stub)
+
+The capture module is a stub. It refuses unless `operator_owns_device=true`
+(env `NEUROPRIVACY_OPERATOR_OWNS_DEVICE=1`) **and**
+`NEUROPRIVACY_NETWORK_CAPTURE=1`. Default:
+
+```
+neuroprivacy capture stub
+enabled=False  operator_owns_device=False
+Network capture refused: operator_owns_device is not true. This stub never
+observes a device the operator does not own. No authenticated scrape. No reverse
+engineering.
+```
+
+No scraping behind authentication. No reverse engineering. Public policies
+only.
 
 ## Layout
 
@@ -127,8 +192,11 @@ Read in this order:
 2. `data/sample/README.md` — why each demo policy exists
 3. `src/neuroprivacy/extractor.py` — span extractor and keyword baseline
 4. `src/neuroprivacy/statutes.py` — encoded CO/CA clauses
-5. `research/phase0/` — the three measurements behind the memo
-6. `src/neuroprivacy/cli.py` — demo-plan only, until Phase 2
+5. `src/neuroprivacy/scoring.py` — deterministic statutory scoring
+6. `src/neuroprivacy/capture.py` — gated network-capture stub
+7. `research/phase0/` — the three measurements behind the memo
+8. `src/neuroprivacy/cli.py` — extract / audit / diff / report
+9. `docs/report/index.html` — static scorecard from committed samples
 
 ## Results
 
@@ -154,8 +222,8 @@ flowchart LR
     extract --> fields[PolicyExtraction + spans]
     fields --> score[score_extraction deterministic]
     score --> findings[AuditFinding list]
-    subgraph gated [Phase 2 optional, off by default]
-      net[network capture operator-owned only]
+    subgraph gated [optional stub, off by default]
+      net[network capture operator_owns_device]
     end
     html -.-> net
 ```
@@ -168,7 +236,7 @@ not on this path.
 
 | Chosen | Given up | What would change the answer |
 | --- | --- | --- |
-| Deterministic span rules + committed LLM cache | Live LLM in Phase 0 | extraction_accuracy F1 on a live hold-out beating rules |
+| Deterministic span rules + committed LLM cache | Live LLM | extraction_accuracy F1 on a live hold-out beating rules |
 | Statutory scoring as rules | LLM-as-judge | A labeled rubric where the judge beats rules without flipping INDETERMINATE |
 | Policy text first, capture gated | Always-on intercept | statute_coverage showing policy text cannot decide the product |
 | Synthetic Wayback snapshots | Live scrapes | A robots-honoring public crawl with a change-rate that disagrees |
@@ -183,16 +251,16 @@ not on this path.
 - "We do not sell" still contains the sale token. The field is about
   disclosure of the topic, not about the vendor's claimed posture.
 - Access and correction rights are policy-text-checkable in principle but
-  have no Phase 0 schema field. They are unmeasured.
-- Network capture without operator opt-in must refuse. Default is off.
+  have no schema field. They are unmeasured.
+- Network capture without `operator_owns_device=true` must refuse.
 - Live vendor HTML, JavaScript-rendered policies, and authenticated portals
   are out of scope. Fetching them is unmeasured.
 
 ## Limitations
 
-This is not a legal opinion. Phase 0 extracts designed fixtures, not the
-live web. Statute objects are public-text summaries and can drift from
-session law. No demo recording is committed. No live model is called.
+This is not a legal opinion. The extractor reads designed fixtures and the
+committed cache, not the live web. Statute objects are public-text summaries
+and can drift from session law. Findings remain observations.
 
 ## License and citation
 
