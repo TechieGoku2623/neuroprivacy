@@ -22,7 +22,7 @@ from neuroprivacy.statutes import CLAUSES
 from neuroprivacy.vendors import resolve_doc, resolve_vendor
 
 app = typer.Typer(no_args_is_help=True, add_completion=False)
-console = Console(width=140)
+console = Console(width=100)
 
 SAMPLES: tuple[SampleDocument, ...] = (
     SampleDocument(
@@ -66,6 +66,19 @@ def _main() -> None:
 
 def _disclaimer() -> None:
     console.print(SAFETY_DISCLAIMER)
+
+
+def _print_eval_summary() -> None:
+    path = get_settings().repo_root / "docs" / "EVALUATION.md"
+    n = 0
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if line.startswith("# Evaluation"):
+            continue
+        console.print(line[:100])
+        if line.strip():
+            n += 1
+        if n >= 14:
+            break
 
 
 def _load_html(path: Path) -> tuple[Path, str, PolicyExtraction]:
@@ -179,6 +192,7 @@ def sample_path() -> None:
 @app.command("extract")
 def extract(
     doc: Annotated[Path, typer.Option("--doc", help="Policy HTML path")],
+    summary: bool = typer.Option(False, "--summary", help="100-column video layout"),
 ) -> None:
     """Extract typed fields with source spans and character offsets."""
 
@@ -186,7 +200,21 @@ def extract(
     console.print("[bold]neuroprivacy extract[/bold]")
     console.print(f"doc: {_path}")
     console.print("LLM: committed cache only (no live model). Span-level citation is mandatory.")
-    _print_fields(extraction)
+    if summary:
+        shown = 0
+        for name, field in extraction.fields.items():
+            if not field.value or field.span is None:
+                continue
+            console.print(
+                f"  {name}: {str(field.value).lower()}  "
+                f'span="{field.span.text[:40]}"  offsets={field.span.start}:{field.span.end}'
+            )
+            shown += 1
+            if shown >= 4:
+                break
+        console.print(f"document status: {extraction.status}")
+    else:
+        _print_fields(extraction)
     missing_span = [
         name for name, field in extraction.fields.items() if field.value and field.span is None
     ]
@@ -201,6 +229,7 @@ def extract(
 def audit(
     vendor: str = typer.Option(..., "--vendor", help="Designed vendor id (vendor-a..d)"),
     show_conflicts: bool = typer.Option(False, "--show-conflicts"),
+    summary: bool = typer.Option(False, "--summary", help="100-column video layout"),
 ) -> None:
     """Score a vendor policy against encoded CO/CA clauses."""
 
@@ -233,8 +262,14 @@ def audit(
         f"covers_generic_device_data="
         f"{str(extraction.field_value('covers_generic_device_data')).lower()}"
     )
-    _print_fields(extraction)
-    _print_scorecard(extraction, findings)
+    if summary:
+        console.print(f"document status: {extraction.status}")
+        indeterminate = [f for f in findings if f.status == "INDETERMINATE"]
+        for item in (indeterminate or findings)[:4]:
+            console.print(f"  {item.clause_id}: {item.status}  {item.observation[:70]}")
+    else:
+        _print_fields(extraction)
+        _print_scorecard(extraction, findings)
     if show_conflicts:
         _print_conflicts(extraction, findings)
     _disclaimer()
@@ -275,11 +310,14 @@ def diff(
 @app.command("report")
 def report(
     out: Annotated[Path | None, typer.Option("--out", help="HTML output path")] = None,
+    summary: bool = typer.Option(False, "--summary", help="Print the published scorecard"),
 ) -> None:
     """Write a static HTML scorecard from committed sample data."""
 
     path = write_report(out or default_report_path())
     console.print(f"wrote {path}")
+    if summary:
+        _print_eval_summary()
     _disclaimer()
 
 

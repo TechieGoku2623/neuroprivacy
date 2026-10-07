@@ -1,0 +1,39 @@
+title: neuroprivacy
+tagline: Compliance auditing for consumer neural data devices
+problem:
+  - Consumer EEG headsets stream neural data to vendor clouds.
+  - Colorado and California now regulate that data specifically.
+  - Nobody is systematically checking whether vendors comply.
+shots:
+  - id: 01-extract
+    command: neuroprivacy extract --doc data/sample/vendor-a.html --summary
+    caption: Every extracted claim carries its source span and offsets
+    hold: 4.0
+    highlight: "span|offsets|names_neural"
+    failure_beat: false
+  - id: 02-keyword-miss
+    command: neuroprivacy audit --vendor vendor-b --summary
+    caption: This policy never says "neural" — keyword search finds nothing
+    hold: 4.0
+    highlight: "baseline finds nothing"
+    failure_beat: false
+  - id: 03-conflict
+    command: neuroprivacy audit --vendor vendor-c --show-conflicts --summary
+    caption: The policy contradicts itself — the clause scores INDETERMINATE
+    hold: 4.5
+    highlight: "INDETERMINATE|Conflicting spans"
+    failure_beat: true
+  - id: 04-diff
+    command: neuroprivacy diff --vendor vendor-d --since 2025-01-01
+    caption: A deletion clause removed between snapshots
+    hold: 3.5
+    highlight: "removed clause|discloses_sharing"
+    failure_beat: false
+results:
+  command: neuroprivacy report --summary
+  caption: The full scorecard rebuilds from data with one command
+  hold: 6.0
+end_card:
+  url: github.com/techiegoku2623/neuroprivacy
+  license: MIT
+gif_beat: 03-conflict

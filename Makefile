@@ -1,7 +1,7 @@
 export PATH := $(HOME)/.local/bin:$(PATH)
 UV ?= uv
 
-.PHONY: setup lint test research eval demo record report
+.PHONY: demo-shots setup lint test research eval demo record report
 
 setup:
 	$(UV) sync --extra dev
@@ -29,5 +29,9 @@ demo:
 report:
 	$(UV) run neuroprivacy report --out docs/report/index.html
 
+demo-shots:
+	$(UV) run --with pyyaml python demo/verify_shots.py
+
 record:
-	$(UV) run python -c "from neuroprivacy.recordings import record_all; print(*record_all(), sep='\n')"
+	bash demo/record.sh
+	bash demo/render.sh
