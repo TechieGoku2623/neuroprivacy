@@ -22,7 +22,6 @@ Regenerable terminal video: `make record`. [Full mp4](demo/out/neuroprivacy-demo
 | 2 | First vertical slice | Phase 0–3 Merged |
 | 3 | Evaluation and demo | Phase 0–3 Merged |
 
-Status values: Not started / In progress / In review / Merged.
 
 ## The problem this solves
 
